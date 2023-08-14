@@ -1,0 +1,93 @@
+Project UniverseBD {
+  database_type: "mysql"
+  Note: '''
+    # Project for social media universe
+  '''
+}
+
+Table User {
+  id int [pk]
+  username varchar [unique, not null]
+  email varchar [unique, not null]
+  password varchar [not null]
+  email_checked boolean [default: false, not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    (username, email) [name: "idx_username_email"]
+  }
+}
+
+Table Posts {
+  id int [pk]
+  user_id int [ref: > User.id]
+  content text [not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user_id [name: "idx_user_id"]
+  }
+}
+
+Table Comment {
+  id int [pk]
+  user_id int [ref: > User.id]
+  post_id int [ref: > Posts.id]
+  content text [not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user_id
+    post_id [name: "idx_user_id_post_id"]
+  }
+}
+
+Table ReplyComments {
+  id int [pk]
+  user_id int [ref: > User.id]
+  comment_id int [ref: > Comment.id]
+  content text [not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user_id
+    comment_id [name: "idx_user_id_comment_id"]
+  }
+}
+
+Table LikePost {
+  id int [pk]
+  user_id int [ref: > User.id]
+  post_id int [ref: > Posts.id]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user_id
+    post_id [name: "idx_user_id_post_id"]
+  }
+}
+
+Table Friendship {
+  id int [pk]
+  user1_id int [ref: > User.id]
+  user2_id int [ref: > User.id]
+  status varchar [not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user1_id
+    user2_id [name: "idx_user1_id_user2_id"]
+  }
+}
+
+Table Notifications {
+  id int [pk]
+  user_id int [ref: > User.id]
+  message text [not null]
+  is_read boolean [default: false, not null]
+  created_at timestamp [default: `now()`, not null]
+
+  Indexes {
+    user_id [name: "idx_user_id"]
+  }
+}

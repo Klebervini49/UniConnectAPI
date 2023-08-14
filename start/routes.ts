@@ -20,6 +20,7 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
+Route.get('/docs/', async ({ view }) => {
+  const specUrl = 'https://uniconnectapi.klebervini.dev/docs/'
+  return view.render('swagger', { specUrl })
 })
