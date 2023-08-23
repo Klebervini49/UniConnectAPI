@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="f97621d6-0024-4438-a639-45ee7068e490" name="UniverseBD Mapping">
+      <data-sources db="8391b59b-4bf9-4225-92d5-9a2d1446f799" ddl="da167cfb-02f6-4b28-97bd-08397160b38f" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>

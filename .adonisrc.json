@@ -4,7 +4,8 @@
     "./commands",
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
-    "adonis5-swagger/build/commands"
+    "adonis5-swagger/build/commands",
+    "@adonisjs/lucid/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -14,7 +15,6 @@
     "Contracts": "contracts"
   },
   "preloads": [
-    "./start/api.routes",
     "./start/routes",
     "./start/kernel"
   ],
@@ -22,7 +22,8 @@
     "./providers/AppProvider",
     "@adonisjs/core",
     "adonis5-swagger",
-    "@adonisjs/view"
+    "@adonisjs/view",
+    "@adonisjs/lucid"
   ],
   "aceProviders": [
     "@adonisjs/repl"
