@@ -6,7 +6,7 @@ Project UniverseBD {
 }
 
 Table User {
-  id int [pk]
+  id int [pk, increment]
   username varchar [unique, not null]
   email varchar [unique, not null]
   password varchar [not null]
@@ -19,7 +19,7 @@ Table User {
 }
 
 Table Posts {
-  id int [pk]
+  id int [pk, increment]
   user_id int [ref: > User.id]
   content text [not null]
   createdAt timestamp [default: `now()`, not null]
@@ -31,7 +31,7 @@ Table Posts {
 }
 
 Table Comment {
-  id int [pk]
+  id int [pk, increment]
   user_id int [ref: > User.id]
   post_id int [ref: > Posts.id]
   content text [not null]
@@ -45,7 +45,7 @@ Table Comment {
 }
 
 Table ReplyComments {
-  id int [pk]
+  id int [pk, increment]
   user_id int [ref: > User.id]
   comment_id int [ref: > Comment.id]
   content text [not null]
@@ -59,9 +59,10 @@ Table ReplyComments {
 }
 
 Table LikePost {
-  id int [pk]
+  id int [pk, increment]
   user_id int [ref: > User.id]
   post_id int [ref: > Posts.id]
+  type_like TypeLikePost [not null]
   createdAt timestamp [default: `now()`, not null]
   updateAt timestamp [default: `now()`, not null, note: "Automatically updated timestamp"]
 
@@ -72,9 +73,9 @@ Table LikePost {
 }
 
 Table Friendship {
-  id int [pk]
-  user1_id int [ref: > User.id]
-  user2_id int [ref: > User.id]
+  id int [pk, increment]
+  user1_id int [ref: > User.id, not null, note: "Quem solicitou"]
+  user2_id int [ref: > User.id, not null, note: "Quem foi solicitado"]
   status FriendshipStatus [not null]
   createdAt timestamp [default: `now()`, not null]
   updateAt timestamp [default: `now()`, not null, note: "Automatically updated timestamp"]
@@ -85,15 +86,8 @@ Table Friendship {
   }
 }
 
-Enum FriendshipStatus {
-  PENDENTE
-  ACEITO
-  RECUSADO
-  BLOQUEADO
-}
-
 Table Notifications {
-  id int [pk]
+  id int [pk, increment]
   user_id int [ref: > User.id]
   message text [not null]
   is_read boolean [default: false, not null]
@@ -103,4 +97,20 @@ Table Notifications {
   Indexes {
     user_id [name: "idx_user_id"]
   }
+}
+
+Enum FriendshipStatus {
+  PENDENTE
+  ACEITO
+  RECUSADO
+  BLOQUEADO
+}
+
+Enum TypeLikePost {
+  LIKE
+  AMEI
+  ODIEI
+  ENGRACADO
+  TRISTE
+  CHOCADO
 }

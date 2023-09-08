@@ -5,18 +5,6 @@ export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @column()
-  public username: string
-
-  @column()
-  public email: string
-
-  @column()
-  public password: string
-
-  @column({ columnName: 'email_checked' })
-  public emailChecked: boolean
-
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

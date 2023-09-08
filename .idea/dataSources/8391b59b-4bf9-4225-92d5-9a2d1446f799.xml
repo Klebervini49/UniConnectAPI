@@ -7,49 +7,49 @@
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <ServerVersion>8.0.34</ServerVersion>
     </root>
-    <schema id="2" parent="1" name="UniverseBD">
-      <Current>1</Current>
-      <IntrospectionTimestamp>2023-08-23.00:02:44</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-08-23.06:02:41</LocalIntrospectionTimestamp>
+    <schema id="2" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="4" parent="1" name="mysql">
+    <schema id="4" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="5" parent="1" name="performance_schema">
+    <schema id="5" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="6" parent="1" name="sys">
+    <schema id="6" parent="1" name="UniverseBD">
+      <Current>1</Current>
+      <IntrospectionTimestamp>2023-08-23.00:02:44</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-08-23.06:02:41</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <table id="7" parent="2" name="Comment">
+    <table id="7" parent="6" name="Comment">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="8" parent="2" name="Friendship">
+    <table id="8" parent="6" name="Friendship">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="9" parent="2" name="LikePost">
+    <table id="9" parent="6" name="LikePost">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="10" parent="2" name="Notifications">
+    <table id="10" parent="6" name="Notifications">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="11" parent="2" name="Posts">
+    <table id="11" parent="6" name="Posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="12" parent="2" name="ReplyComments">
+    <table id="12" parent="6" name="ReplyComments">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="13" parent="2" name="User">
+    <table id="13" parent="6" name="User">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
