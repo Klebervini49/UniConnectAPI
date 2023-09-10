@@ -21,440 +21,494 @@
     </schema>
     <schema id="6" parent="1" name="UniverseBD">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-08-23.00:02:44</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-08-23.06:02:41</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-09-08.22:28:36</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-09-09.01:28:36</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <table id="7" parent="6" name="Comment">
+    <table id="7" parent="6" name="adonis_schema">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="8" parent="6" name="Friendship">
+    <table id="8" parent="6" name="adonis_schema_versions">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="9" parent="6" name="LikePost">
+    <table id="9" parent="6" name="comments">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="10" parent="6" name="Notifications">
+    <table id="10" parent="6" name="friendships">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="11" parent="6" name="Posts">
+    <table id="11" parent="6" name="like_posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="12" parent="6" name="ReplyComments">
+    <table id="12" parent="6" name="notifications">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="13" parent="6" name="User">
+    <table id="13" parent="6" name="posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="14" parent="7" name="id">
-      <DasType>int|0s</DasType>
+    <table id="14" parent="6" name="reply_comments">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="15" parent="6" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="16" parent="7" name="id">
+      <AutoIncrement>54</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="15" parent="7" name="user_id">
-      <DasType>int|0s</DasType>
+    <column id="17" parent="7" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="16" parent="7" name="post_id">
+    <column id="18" parent="7" name="batch">
       <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="17" parent="7" name="content">
-      <DasType>text|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="19" parent="7" name="migration_time">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>4</Position>
     </column>
-    <column id="18" parent="7" name="createdAt">
-      <DasType>timestamp|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="19" parent="7" name="updateAt">
-      <DasType>timestamp|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
-      <Position>6</Position>
-    </column>
-    <foreign-key id="20" parent="7" name="Comment_ibfk_1">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
-    </foreign-key>
-    <foreign-key id="21" parent="7" name="Comment_ibfk_2">
-      <ColNames>post_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>Posts</RefTableName>
-    </foreign-key>
-    <index id="22" parent="7" name="PRIMARY">
+    <index id="20" parent="7" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="23" parent="7" name="idx_user_id_post_id">
-      <ColNames>user_id
-post_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="24" parent="7" name="post_id">
-      <ColNames>post_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="25" parent="7" name="PRIMARY">
+    <key id="21" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="26" parent="8" name="id">
+    <column id="22" parent="8" name="version">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="27" parent="8" name="user1_id">
-      <DasType>int|0s</DasType>
+    <column id="23" parent="9" name="id">
+      <AutoIncrement>6</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="24" parent="9" name="user_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="28" parent="8" name="user2_id">
-      <DasType>int|0s</DasType>
+    <column id="25" parent="9" name="post_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="29" parent="8" name="status">
-      <DasType>enum(&apos;PENDENTE&apos;, &apos;ACEITO&apos;, &apos;RECUSADO&apos;, &apos;BLOQUEADO&apos;)|0e</DasType>
+    <column id="26" parent="9" name="content">
+      <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="30" parent="8" name="createdAt">
+    <column id="27" parent="9" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="31" parent="8" name="updateAt">
+    <column id="28" parent="9" name="updated_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>6</Position>
     </column>
-    <foreign-key id="32" parent="8" name="Friendship_ibfk_1">
+    <foreign-key id="29" parent="9" name="comments_user_id_foreign">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="30" parent="9" name="comments_post_id_foreign">
+      <ColNames>post_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>posts</RefTableName>
+    </foreign-key>
+    <index id="31" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="32" parent="9" name="comments_user_id_index">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="33" parent="9" name="idx_user_id_post_id">
+      <ColNames>post_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="34" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="35" parent="10" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="36" parent="10" name="user1_id">
+      <Comment>Quem enviou a solicitação</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="37" parent="10" name="user2_id">
+      <Comment>Quem recebeu a solicitação</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="38" parent="10" name="status">
+      <DasType>enum(&apos;pendente&apos;, &apos;aceito&apos;, &apos;recusado&apos;, &apos;bloqueado&apos;)|0e</DasType>
+      <DefaultExpression>&apos;pendente&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="39" parent="10" name="created_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="40" parent="10" name="updated_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="41" parent="10" name="friendships_user1_id_foreign">
       <ColNames>user1_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="33" parent="8" name="Friendship_ibfk_2">
+    <foreign-key id="42" parent="10" name="friendships_user2_id_foreign">
       <ColNames>user2_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="34" parent="8" name="PRIMARY">
+    <index id="43" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="8" name="idx_user1_id_user2_id">
-      <ColNames>user1_id
-user2_id</ColNames>
+    <index id="44" parent="10" name="friendships_user1_id_index">
+      <ColNames>user1_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="36" parent="8" name="user2_id">
+    <index id="45" parent="10" name="idx_user1_id_user2_id">
       <ColNames>user2_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="37" parent="8" name="PRIMARY">
+    <key id="46" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="38" parent="9" name="id">
-      <DasType>int|0s</DasType>
+    <column id="47" parent="11" name="id">
+      <AutoIncrement>7</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="39" parent="9" name="user_id">
-      <DasType>int|0s</DasType>
+    <column id="48" parent="11" name="user_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="40" parent="9" name="post_id">
-      <DasType>int|0s</DasType>
+    <column id="49" parent="11" name="post_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="41" parent="9" name="createdAt">
-      <DasType>timestamp|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <NotNull>1</NotNull>
+    <column id="50" parent="11" name="type_like">
+      <DasType>enum(&apos;like&apos;, &apos;amei&apos;, &apos;odiei&apos;, &apos;engracado&apos;, &apos;triste&apos;, &apos;chocado&apos;)|0e</DasType>
+      <DefaultExpression>&apos;like&apos;</DefaultExpression>
       <Position>4</Position>
     </column>
-    <column id="42" parent="9" name="updateAt">
+    <column id="51" parent="11" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>5</Position>
     </column>
-    <foreign-key id="43" parent="9" name="LikePost_ibfk_1">
+    <column id="52" parent="11" name="updated_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="53" parent="11" name="like_posts_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="44" parent="9" name="LikePost_ibfk_2">
+    <foreign-key id="54" parent="11" name="like_posts_post_id_foreign">
       <ColNames>post_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>Posts</RefTableName>
+      <RefTableName>posts</RefTableName>
     </foreign-key>
-    <index id="45" parent="9" name="PRIMARY">
+    <index id="55" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="46" parent="9" name="idx_user_id_post_id">
-      <ColNames>user_id
-post_id</ColNames>
+    <index id="56" parent="11" name="like_posts_user_id_index">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="47" parent="9" name="post_id">
+    <index id="57" parent="11" name="idx_user_id_post_id">
       <ColNames>post_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="48" parent="9" name="PRIMARY">
+    <key id="58" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="49" parent="10" name="id">
-      <DasType>int|0s</DasType>
+    <column id="59" parent="12" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="50" parent="10" name="user_id">
-      <DasType>int|0s</DasType>
+    <column id="60" parent="12" name="user_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="51" parent="10" name="message">
+    <column id="61" parent="12" name="content">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="52" parent="10" name="is_read">
+    <column id="62" parent="12" name="is_read">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="53" parent="10" name="createdAt">
+    <column id="63" parent="12" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="54" parent="10" name="updateAt">
+    <column id="64" parent="12" name="updated_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>6</Position>
     </column>
-    <foreign-key id="55" parent="10" name="Notifications_ibfk_1">
+    <foreign-key id="65" parent="12" name="notifications_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="56" parent="10" name="PRIMARY">
+    <index id="66" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="57" parent="10" name="idx_user_id">
+    <index id="67" parent="12" name="idx_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="58" parent="10" name="PRIMARY">
+    <key id="68" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="59" parent="11" name="id">
-      <DasType>int|0s</DasType>
+    <column id="69" parent="13" name="id">
+      <AutoIncrement>6</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="60" parent="11" name="user_id">
-      <DasType>int|0s</DasType>
+    <column id="70" parent="13" name="user_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="61" parent="11" name="content">
+    <column id="71" parent="13" name="content">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="62" parent="11" name="createdAt">
+    <column id="72" parent="13" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="63" parent="11" name="updateAt">
+    <column id="73" parent="13" name="updated_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>5</Position>
     </column>
-    <foreign-key id="64" parent="11" name="Posts_ibfk_1">
+    <foreign-key id="74" parent="13" name="posts_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="65" parent="11" name="PRIMARY">
+    <index id="75" parent="13" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="66" parent="11" name="idx_user_id">
+    <index id="76" parent="13" name="idx_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="67" parent="11" name="PRIMARY">
+    <key id="77" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="68" parent="12" name="id">
-      <DasType>int|0s</DasType>
+    <column id="78" parent="14" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="69" parent="12" name="user_id">
-      <DasType>int|0s</DasType>
+    <column id="79" parent="14" name="user_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="70" parent="12" name="comment_id">
-      <DasType>int|0s</DasType>
+    <column id="80" parent="14" name="comment_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="71" parent="12" name="content">
+    <column id="81" parent="14" name="content">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="72" parent="12" name="createdAt">
+    <column id="82" parent="14" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="73" parent="12" name="updateAt">
+    <column id="83" parent="14" name="updated_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>6</Position>
     </column>
-    <foreign-key id="74" parent="12" name="ReplyComments_ibfk_1">
+    <foreign-key id="84" parent="14" name="reply_comments_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>User</RefTableName>
+      <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="75" parent="12" name="ReplyComments_ibfk_2">
+    <foreign-key id="85" parent="14" name="reply_comments_comment_id_foreign">
       <ColNames>comment_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>Comment</RefTableName>
+      <RefTableName>comments</RefTableName>
     </foreign-key>
-    <index id="76" parent="12" name="PRIMARY">
+    <index id="86" parent="14" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="77" parent="12" name="idx_user_id_comment_id">
-      <ColNames>user_id
-comment_id</ColNames>
+    <index id="87" parent="14" name="reply_comments_user_id_index">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="78" parent="12" name="comment_id">
+    <index id="88" parent="14" name="idx_user_id_comment_id">
       <ColNames>comment_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="79" parent="12" name="PRIMARY">
+    <key id="89" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="80" parent="13" name="id">
-      <DasType>int|0s</DasType>
+    <column id="90" parent="15" name="id">
+      <AutoIncrement>41</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="81" parent="13" name="username">
+    <column id="91" parent="15" name="username">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="82" parent="13" name="email">
+    <column id="92" parent="15" name="profile_picture_url">
       <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="83" parent="13" name="password">
+    <column id="93" parent="15" name="email">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="84" parent="13" name="email_checked">
+    <column id="94" parent="15" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="95" parent="15" name="email_checked">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="85" parent="13" name="createdAt">
-      <DasType>timestamp|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="86" parent="13" name="updateAt">
+    <column id="96" parent="15" name="created_at">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
-      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>7</Position>
     </column>
-    <index id="87" parent="13" name="PRIMARY">
+    <column id="97" parent="15" name="updated_at">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <index id="98" parent="15" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="88" parent="13" name="username">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="89" parent="13" name="email">
+    <index id="99" parent="15" name="users_email_unique">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="90" parent="13" name="idx_username_email">
+    <index id="100" parent="15" name="idx_username_email">
       <ColNames>username
 email</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="91" parent="13" name="PRIMARY">
+    <key id="101" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="92" parent="13" name="username">
-      <UnderlyingIndexName>username</UnderlyingIndexName>
-    </key>
-    <key id="93" parent="13" name="email">
-      <UnderlyingIndexName>email</UnderlyingIndexName>
+    <key id="102" parent="15" name="users_email_unique">
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

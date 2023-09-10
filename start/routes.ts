@@ -4,4 +4,8 @@ Route.get('/', async () => {
   return { message: 'hello world' }
 })
 
-Route.get('/users', 'UsersController.store')
+Route.group(() => {
+  Route.post('/login', 'UsersController.LOGIN')
+  Route.post('/cadastro', 'UsersController.CADASTRO')
+  Route.post('/mudar-senha', 'UsersController.MUDAR_SENHA')
+}).prefix('/users')
