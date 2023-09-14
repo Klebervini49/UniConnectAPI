@@ -1,7 +1,7 @@
 # UniVerse - UniConnectAPI
 
-[![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)](https://github.com/Klebervini49/UniConnectAPI)
-[![Licença](https://img.shields.io/badge/licença-MIT-blue.svg)](LICENSE)
+[![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)](https://github.com/Klebervini49/UniConnectAPI) [![Licença](https://img.shields.io/badge/licença-MIT-blue.svg)](LICENSE)
+
 
 ## Visão Geral
 
@@ -48,7 +48,9 @@ A API estará acessível localmente em http://localhost:3333 por padrão.
 
 Para obter detalhes sobre as rotas e recursos disponíveis, consulte a documentação da API ou os arquivos de rota do projeto.
 
-Se deseja utilizar o mesmo Banco de dados, use as migrations para a criação do seu banco. Ou acesse https://dbdocs.io/klebervini0/UniverseBD | https://dbdiagram.io/d/UniverseBD-64fa159c02bd1c4a5e2aece5
+Se deseja utilizar o mesmo Banco de dados, use as migrations para a criação do seu banco. Ou acesse:
+- https://dbdocs.io/klebervini0/UniverseBD
+- https://dbdiagram.io/d/UniverseBD-64fa159c02bd1c4a5e2aece5
 
 ## Contribuição
 
