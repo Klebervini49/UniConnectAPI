@@ -1,6 +1,6 @@
 # UniVerse - UniConnectAPI
 
-[![Status do Projeto](https://img.shields.io/badge/status-em%20desenvolvimento-brightgreen)](https://github.com/Klebervini49/UniConnectAPI)
+[![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)](https://github.com/Klebervini49/UniConnectAPI)
 [![Licença](https://img.shields.io/badge/licença-MIT-blue.svg)](LICENSE)
 
 ## Visão Geral
@@ -13,7 +13,7 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados:
 
 - Node.js (v14.0 ou superior)
 - npm (gerenciador de pacotes do Node.js)
-- Banco de Dados (por exemplo, PostgreSQL)
+- Banco de Dados (por exemplo, MySql)
 
 ## Instalação
 
