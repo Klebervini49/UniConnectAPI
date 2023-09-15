@@ -9,3 +9,8 @@ Route.group(() => {
   Route.post('/cadastro', 'UsersController.CADASTRO')
   Route.post('/mudar-senha', 'UsersController.MUDAR_SENHA')
 }).prefix('/users')
+
+Route.group(() => {
+  Route.post('/retornar-posts', 'PostsController.POSTS_REF_ID')
+  Route.get('/retornar-post:id', 'PostsController.POSTS')
+}).prefix('/posts')

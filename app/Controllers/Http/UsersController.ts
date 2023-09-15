@@ -1,7 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import { validate } from 'indicative/validator'
-// @ts-ignore
 import bcrypt from 'bcrypt'
 
 export default class UsersController {
@@ -11,7 +10,7 @@ export default class UsersController {
     username: 'required|string',
   }
 
-  async LOGIN({ request, response }: HttpContextContract) {
+  async LOGIN ({ request, response }: HttpContextContract) {
     const data = request.only(['email', 'password'])
 
     try {
@@ -34,7 +33,7 @@ export default class UsersController {
     return user
   }
 
-  async CADASTRO({ request, response }: HttpContextContract) {
+  async CADASTRO ({ request, response }: HttpContextContract) {
     const data = request.only(['username', 'email', 'password'])
 
     try {
@@ -61,7 +60,7 @@ export default class UsersController {
     return user
   }
 
-  async MUDAR_SENHA({ request, response }: HttpContextContract) {
+  async MUDAR_SENHA ({ request, response }: HttpContextContract) {
     const data = request.only(['email', 'password', 'newpassword'])
 
     try {
