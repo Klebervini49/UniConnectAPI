@@ -10,7 +10,7 @@ export default class UsersController {
     username: 'required|string',
   }
 
-  async LOGIN ({ request, response }: HttpContextContract) {
+  async singin ({ request, response }: HttpContextContract) {
     const data = request.only(['email', 'password'])
 
     try {
@@ -33,7 +33,7 @@ export default class UsersController {
     return user
   }
 
-  async CADASTRO ({ request, response }: HttpContextContract) {
+  async singup ({ request, response }: HttpContextContract) {
     const data = request.only(['username', 'email', 'password'])
 
     try {
@@ -60,7 +60,7 @@ export default class UsersController {
     return user
   }
 
-  async MUDAR_SENHA ({ request, response }: HttpContextContract) {
+  async  changePass ({ request, response }: HttpContextContract) {
     const data = request.only(['email', 'password', 'newpassword'])
 
     try {
