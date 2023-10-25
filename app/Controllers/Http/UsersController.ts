@@ -10,28 +10,7 @@ export default class UsersController {
     username: 'required|string',
   }
 
-  async singin ({ request, response }: HttpContextContract) {
-    const data = request.only(['email', 'password'])
 
-    try {
-      await validate(data, {
-        email: this.validationRules.email,
-        password: this.validationRules.password,
-      })
-    } catch (error) {
-      return response.badRequest({ message: 'Dados inválidos' })
-    }
-
-    const user = await User.findBy('email', data.email)
-
-    if (!user) return response.badRequest({ message: 'Email não cadastrado' })
-
-    const passwordMatch = await bcrypt.compare(data.password, user.password)
-
-    if (!passwordMatch) return response.badRequest({ message: 'Senha incorreta' })
-
-    return user
-  }
 
   async singup ({ request, response }: HttpContextContract) {
     const data = request.only(['username', 'email', 'password'])
