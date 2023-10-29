@@ -62,7 +62,7 @@ Este projeto é licenciado sob a Licença MIT - veja o arquivo LICENSE para mais
 
 ## Contato
 
-- Seu Nome: Kleberson Vinicius
-- Seu Email: klebervini0@gmail.com
-- GitHub: [https://github.com/Klebervini49](https://github.com/Klebervini49)
-- Website: [https://klebervini.dev](https://klebervini.dev)
+- Kleberson Vinicius
+- klebervini0@gmail.com
+- [https://github.com/Klebervini49](https://github.com/Klebervini49)
+- [https://klebervini.dev](https://klebervini.dev)
