@@ -58,9 +58,7 @@ export default class UsersController {
 
     if (!passwordMatch) return response.badRequest({ message: 'Senha incorreta' })
 
-    const hashedPassword = await bcrypt.hash(data.newpassword, 10)
-
-    user.password = hashedPassword
+    user.password = await bcrypt.hash(data.newpassword, 10)
 
     return await user.save()
   }
