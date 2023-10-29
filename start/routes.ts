@@ -11,7 +11,8 @@ Route.get('/me', 'AuthController.me').middleware('auth');
 Route.get('/private', 'AuthController.private').middleware('auth');
 Route.post('/cadastro', 'UsersController.singup');
 
-Route.post('/reset-password', 'ResetsController.RequestToken');
+Route.post('/reset-password', 'ResetsController.requestToken');
+Route.put('/reset-password', 'ResetsController.resetPassword');
 
 Route.resource('/posts/', 'PostsController').apiOnly();
 

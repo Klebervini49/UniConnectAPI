@@ -10,8 +10,6 @@ export default class UsersController {
     username: 'required|string',
   }
 
-
-
   async singup ({ request, response }: HttpContextContract) {
     const data = request.only(['username', 'email', 'password'])
 
