@@ -32,7 +32,8 @@
       "adonis5-swagger",
       "@adonisjs/view",
       "@adonisjs/lucid",
-      "@adonisjs/auth"
+      "@adonisjs/auth",
+      "@adonisjs/mail"
     ]
   }
 }

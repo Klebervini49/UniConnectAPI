@@ -9,17 +9,13 @@ export default class AuthController {
 
     return token;
   }
-
   async logout ({ auth }: HttpContextContract) {
     return await auth.logout();
   }
 
   async me ({ auth }: HttpContextContract) {
-    await auth.authenticate();
-
     return {
-      isLoggedIn: auth.user?.email,
+      isLoggedIn: auth.user,
     }
   }
-
 }

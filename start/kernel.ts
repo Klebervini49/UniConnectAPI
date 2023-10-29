@@ -40,4 +40,5 @@ Server.middleware.register([() => import('@ioc:Adonis/Core/BodyParser')])
 */
 Server.middleware.registerNamed({
   'swagger-auth': 'Adonis/Addons/Swagger/AuthMiddleware',
+  auth: 'App/Middleware/Auth',
 })

@@ -7,8 +7,11 @@ Route.post('/', async () => {
 
 Route.post('/login', 'AuthController.login');
 Route.post('/logout', 'AuthController.logout');
-Route.get('/me', 'AuthController.me');
+Route.get('/me', 'AuthController.me').middleware('auth');
+Route.get('/private', 'AuthController.private').middleware('auth');
 Route.post('/cadastro', 'UsersController.singup');
+
+Route.post('/reset-password', 'ResetsController.RequestToken');
 
 Route.resource('/posts/', 'PostsController').apiOnly();
 
